@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 기초문법</title>
+    <style>
+        strong{
+            color: red;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>2장. 자바스크립트 기초 문법</h1>
+    <h2>도전 mission</h2>
+    <h3> q1. 진영이의 하루 지출이 적절한지 판단하는 프로그램</h3>
+    <script>
+        // 진영이의 하루 지출 내역
+        // 교통비 : 3000
+        //  식비 : 6000
+        // 음료비 : 3000
+        // 삼항 조건 연산자를 사용, 하루 적정 지출비용 1만원 (조건)
+        //  000원 초과, or 돈관리 잘했어요 --> 출력 (body)
+        document.write("========진영이의 하루 지출관리 프로그램 =========" ,"<br>");
+        document.write("교통비 3000원, 식비 6000원, 음료비 3000원 지출했음" ,"<br>");
+        var cost1 = 3000, cost2 = 6000, cost3 = 3000;
+        var cost_sum = cost1+cost2+cost3;
+        // 조건 ? 참일때 : 거짓일때 ;
+        cost_sum > 10000 ? document.write("<strong>"+(cost_sum-10000)+"</srtong>원 초과","<br>") : document.write( "돈관리 잘했어요!" ,"<br>");
+    </script>
+    
+</body>
+</html>

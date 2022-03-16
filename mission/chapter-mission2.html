@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 2</title>
+    <style>
+        strong{
+            font-size: 2rem;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1>2장. 자바스크립트 기초 문법</h1>
+    <h2>도전 mission</h2>
+    <h3>q2. 평균 판매량을 구하는 프로그램</h3>
+    <script>
+        // 연산자를 이용하여 평균 판매량 구하기 : salesAvg
+        // 1분기 : 1200
+        // 2분기 : 1300
+        // 3분기 : 1000
+        // 4분기 : 질의 응답창, prompt() 을이용하여 임력받고,
+        // 전분기 판매량과 4분기 판매량 비교,
+        //  판매량이 평균이상입니다 or 판매량이 평균 미달입니다. 출력
+        var sale1 = 1200, sale2 = 1300, sale3 = 1000;
+        var sale4 = Number(prompt("4분기 판매량을 입력하세요!"))
+        var saleAVG = (sale1 + sale2 + sale3 + sale4) / 4
+        saleAVG <= sale4 ? document.write("판매량이 평균 <strong>이상</strong>입니다." ,"<br>") : document.write("판매량이 평균 <strong>미달</stong>입니다." ,"<br>");
+    </script>
+    
+</body>
+</html>
