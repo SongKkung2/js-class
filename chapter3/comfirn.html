@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문은 아니지만 알아야 하는 명령어</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        #truePopup , #falsePopup {
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+            z-index: 1000;
+            box-sizing: border-box;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px 0 #333;
+        }
+        .home-btn{
+            background: #000;
+            color: white;
+            padding: 5px 15px;
+            float: right;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>confirm</h1>
+    <p>comfirm 은 조건문은 아니지만, 그 결과를 참하고 거짓으로 반환하는 메소드 (=명령어) 입니다.</p>
+    <p>비슷한 메소드는 이미 살펴본 prompt()가 있다.</p>
+    <code>
+        <pre>
+            confirm("message");
+        </pre>
+    </code>
+    <div id="truePopup" class="hidden">
+        <h2>서비스 이용에 불편을 드려 죄송합니다</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero velit non fuga sed impedit quod voluptates dolor. Atque, at quaerat voluptatem, officiis dolore nam illo qui id nesciunt expedita saepe.</p>
+        <button class="home-btn"id="trueHome">처음으로</button>
+    </div>
+    <div id="falsePopup" class="hidden">
+        <h2>보다 나은 서비스로 보답하겠습니다.</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero velit non fuga sed impedit quod voluptates dolor. Atque, at quaerat voluptatem, officiis dolore nam illo qui id nesciunt expedita saepe.</p>
+        <button class="home-btn"id="falseHome">처음으로</button>
+    </div>
+
+    <h3>이것은 로고 </h3>
+    <div class="hero">
+        <img src="https://picsum.photos/1920/300"" alt="placeholder">
+    </div>
+    <h4>회원 탈퇴</h4>
+    <p>가짜글짜</p>
+    <button id="memberExit">탈퇴</button>
+    <button id="cancleExit">취소</button>
+    <h2>confirm 예시</h2>
+    <script>
+        // var memberExit = confirm("탈퇴하시겠습니까?");
+        // console.log(memberExit);
+        // if(memberExit){
+        //     alert("그동안 이용해 주셔서 감사합니다. \n일주일 이내에 탈퇴를 철회 할 수 있습니다.")
+        // } else { alert("계속 이용해주셔서 감사합니다. \n보다 나은 서비스로 보답 하겠습니다.")
+
+        // }
+        // 탈퇴버튼 찾기
+        var exitBTN = document.querySelector("#memberExit");
+        
+            //  팝업창 찾기
+        var truePopup = document.querySelector("#truePopup");
+        var falsePopup = document.querySelector("#falsePopup");
+        // 탈퇴, 철회시 처음으로 버튼 찾기
+        var homeBTN = document.querySelector(".home-btn");
+        
+        // 처음으로 버튼 클릭하면 이동하기
+        homeBTN.addEventListener("click",function(){
+            location.href = "https://naver.com";
+        })
+
+        // 탈퇴버튼 클릭하면 confirm 을 띄운다!
+        exitBTN.addEventListener("click",function()
+        {
+            var userChoice = confirm("정말로 탈퇴하시겠습니까?")
+            if(userChoice){
+                truePopup.classList.remove("hidden");
+
+            } else{
+                falsePopup.classList.remove("hidden");
+            }
+        })
+    </script>
+    
+</body>
+</html>
