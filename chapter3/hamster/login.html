@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="images/favicon2.png" type="image/x-icon">
+    <title>햄스터 분양사무소</title>
+</head>
+<body>
+    <h1 class="d-none">햄스터분양사무소</h1>
+    <header>
+        <div class="header-wrap">
+            <div class="header-top">
+                <ul class="top-links">
+                    <li><a herf="#">처음으로</a></li>
+                    <li><a herf="#">로그인</a></li>
+                    <li><a herf="#">사이트맵</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <img src="images/logo.png" alt="햄스터 사이트 로고">
+            </div>
+            <nav class="main-nav">
+                <ul id="gnb">
+                    <li><a href="#">최저가상품</a></li>
+                    <li><a href="#">인기상품</a></li>
+                    <li><a href="#">신선식품</a></li>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <img src="images/hamster-hero.png" alt="큰햄스터 사진">
+    </div>
+    <!-- 오늘의 실습시작 -->
+    <section id="main">
+        <div class="main-wrap">
+            <h2>회원로그인</h2>
+            <div class="banner-form">
+                <div class="banner-form-wrap">
+                    <div class="banner">
+                        <img src="images/banner.png" alt="">
+                    </div>
+                    <div class="form">
+                        <form id="login-form" autocomplete="off">
+                            <ul>
+                                <li>
+                                    <label for="user_id">아이디</label>
+                                    <input type="text" id="user_id" required id="user_id" placeholder="아이디나 이메일 주소">
+                                </li>
+                                <li>
+                                    <label for="user_pw">비밀번호</label>
+                                    <input type="password" id="user_pw" required id="user_pw" placeholder="기호,영어,숫자 7자 이상">
+                                </li>
+                                <li>
+                                    <input type="submit" value="로그인" id="go_login">
+                                </li>
+                                <li>
+                                    <a href="#">아이디/비밀번호 찾기</a>
+                                    <a href="#">도움이 필요하신가요?</a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 오늘의 실습끝 -->
+    <footer>
+        <div class="footer-wrap">
+            <div class="logo2">로고이미지</div>
+            <address>사이트 정보, 저작권표시, 전화번호 사업자 번호 등등등</address>
+        </div>
+    </footer>
+    <script src="script/hamster.js">
+        
+    </script>
+</body>
+</html>
