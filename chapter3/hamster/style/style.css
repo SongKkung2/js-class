@@ -65,10 +65,10 @@ ul{
 }
 .banner-form-wrap{
     display: flex;
-    width: 80%;
+    width: 60%;
     background-color: white;
     padding: 50px;
-    border-radius: 50px;
+    border-radius: 20px;
     box-shadow: 0 4px 5px #888;
 }
 .banner{
@@ -99,17 +99,25 @@ ul{
     width: 200px;
 }
 #go_login{
-    background: black;
+    background: rgb(107, 70, 75);
     color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
     padding: 10px 20px;
     border: 0;
+    margin: 20px;
 }
 #login-form ul{
     display: flex;
     flex-direction: column;
 }
 #login-form ul li:nth-child(3){
-    float: right;
+    display: flex;
+    justify-content: flex-end;
+}
+label{
+    border: 1px solid #333;
+    ;
 }
 /* footer */
 footer{
