@@ -4,7 +4,9 @@
 # table of class
 -변수 : clear
 -연산자 : clear
--제어문 : ~ing
+-제어문 : ~ing clear
+중첩if
+-선택문 : switch ~ case 
 
 # mission
 - p.58 I , II : ~ing
