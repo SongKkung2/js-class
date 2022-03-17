@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nested-if</title>
+</head>
+<body>
+    <h1>중첩 if</h1>
+    <p>if 구문 안에 또 if 구문을 작성하는 규칙, 너무 많이 중첩하게 될경우 복잡한 코드로 오류나 실수를 범할 수 있음</p>
+    <code>
+        <pre>
+            if (조건식){
+                if(다른 조건식){
+                    실행코드 1;
+                } else{
+                    실행코드 2
+                }
+            } else {
+
+            } else if (조건식 ){
+
+            } > 너무 많이 쓰면 복잡해짐
+        </pre>
+    </code>
+    <h2>중첩 if 예시 </h2>
+    <p>질의 응답창을 이용해 로그인 하는 프로그램을 작성할것</p>
+    <p>미리 정해진 아이디와 패스워드, 사용자가 입력한 아이디 패스워드를 비교해서 아이디가 일치하면 패스워드를 비교해서 그것마저 일치했을때 로그인이 성공하고, 
+        아이디가 일치하나 패스워드를 비교해서 일치하지 않다면 로그인 실패.
+        또는 아이디 마저 미리 정해진 아이디와 다르다면, 그냥 실패!
+    </p>
+    <script>
+        //  미리 정해둔 정보 easy1004/112233
+        var admin_id = "easy1004";
+        var admin_pw = "112233";
+
+        var user_id = prompt("아이디를 입력하세요")
+        var user_pw = prompt("패스워드를 입력하세요")
+
+        if(admin_id === user_id){
+            if(user_pw === admin_pw){
+                alert('로그인을 환영합니다.\n 첫 페이지로 이동합니다.!')
+                location.href="https://naver.com"
+            } else{
+                alert('비밀 번호를 확인하세요.')
+            }
+        }else {
+            alert('등록된 회원이 아닙니다.')
+        }
+    </script>
+</body>
+</html>
