@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문과 선택문</title>
+</head>
+<body>
+    <h3>switch 에시</h3>
+    <script>
+        // 즐겨 사용하는 포털 사이트를 질의 응답창을 이용해 물어보고 일치하는 포털 사이트로 url을 리다이렉트
+        var likeSite = prompt("즐겨찾는 포털 사이트 이름은 무엇인가요?","예)네이버, 다음, 구글")
+        if(likeSite.toLocaleLowerCase()==="naver"){
+            likeSite = "네이버"
+        }else if(likeSite.toLocaleLowerCase()==="daum"){
+            likeSite = "다음"
+        }else if(likeSite.toLocaleLowerCase()==="google"){
+            likeSite = "구글"
+        }
+        var targetURL;
+        switch(likeSite){
+            case "네이버":targetURL="naver.com";
+            break;
+            case "다음":targetURL="daum.net";
+            break;
+            case "구글":targetURL="google.com";
+            break;
+            default:alert("네이버, 다음, 구글 중에서만 입력하세요!")
+        }
+        if(targetURL){
+            location.href="https://"+targetURL;
+        }else{
+            location.reload();
+        }
+    </script>
+</body>
+</html>
