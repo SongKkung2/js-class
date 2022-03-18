@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 반복문 > for 반복문</title>
+    <style>
+        .blue{
+            color: blue;
+        }
+        .red{
+            color: red;
+        }
+        .aqua{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>반복문</h1>
+    <p>코드를 원하는 횟수만큼 반복하여 실행할 수 있는 구문을 반복문이라고 한다.</p>
+    <p>예를 들면 "안녕하세요"를 10번 출력하려면 지금은 document.write()를 10번 
+        작성한뒤 실행해야하는데, 반복문을 사용하면 10회를 지정해서 1번만 쓸수있다.
+    </p>
+    <h2>반복문의종류</h2>
+    <ul>
+        <li>while반복문 : 가장간단, 반드시 변수를 먼저 선언해야함</li>
+        <li>do~while 반복문 : 거의 안쓰지만, 조건식이 거짓이여도 1번은 무조건 실행됨.</li>
+        <li>for 반복문 (for ~ of, for~in) : 반복문이라면 보통 for문을 이야기할정도</li>
+    </ul>
+    <h3>for 반복문</h3>
+    <p>가장 자주쓰이는 for 반복문, while, do while 문과 문법은 약간다르지만,
+        반복해서 코드를 실행하는 구문입니다.
+    </p>
+    <h4>for반복문 예시</h4>
+    <code>
+        <pre>
+            for(초깃값;조건식;증감식){
+                반복할 코드;
+            }
+        </pre>
+    </code>
+    <p>for, for~of, for~in 으로 나뉩니다.</p>
+    <script>
+    // var total = 0;    
+    // for(var i = 1; i<=10; i++){
+    //     total += i;
+    //     if(i%2==0){
+    //         document.write(i+"는 짝수입니다" ,"<br>");
+    //     }else{
+    //         document.write(i+"는 홀수입니다." ,"<br>");
+    //     }
+    // }
+    // document.write("1~10까지의 숫자의 합 :"+total+ "<br>");
+
+    // 값의 범위가 1부터 100까지 숫자중 5의 배수는 빨강, 7의 배수는 초록 5와 7의 배수는 아쿠아
+    for(var i = 1; i<=100; ++i){
+        if(i%5==0 && i%7!=0){
+            document.write("<span class=\"red\">"+i+"</span>"+"는 5의 배수입니다." +"<br>");
+        }else if(i%7==0 && i%5!=0){
+            document.write("<span class=\"blue\">"+i+"</span>"+"는 7의 배수입니다."+ "<br>");
+        }else if(i%5==0 && i%7==0){
+            document.write("<span class=\"aqua\">"+i+"</span>"+"는 5와 7의 공배수입니다."+ "<br>");
+        }
+    }
+
+
+    </script>
+</body>
+</html>

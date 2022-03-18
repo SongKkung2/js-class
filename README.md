@@ -7,6 +7,7 @@
 -제어문 : ~ing clear
 중첩if
 -선택문 : switch ~ case 
+- 반복문 : while, do while
 
 # mission
 - p.58 I , II : ~ing
