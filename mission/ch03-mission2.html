@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch3.도전미션 2</title>
+</head>
+<body>
+    <h2>5행 5열의 표를 만들고, 데이터가 1부터 25까지 출력되도록 작성해주세요.</h2>
+    <p>중첩 for문을 먼저 알아야 더 쉽게 해결됩니다.</p>
+    <h3>중첩 for 문 실행코드</h3>
+    <code>
+        <pre>
+            for(초기값;조건식;증감식){
+                for(초기값;조건식;증감식){
+                    for(초기값;조건식;증감식){
+
+                    }
+                }
+            }
+        </pre>
+    </code>
+    <script>
+        // for( var i=1; i<=3; i++){
+        //     for(var j =1;  j <=3; j++){
+        //         document.write(i+"행"+j+"열" ,"<br>");
+        //     }
+        // }
+        // document.write("진짜 i :"+ i + "<br>");
+        var num = 1;
+    var t = "<table border=\"1\">";
+    for(var i=1; i<=5; i++){
+        t+= "<tr>";
+        for(var j=1; j<=5; j++) {
+            t += "<td>"+num+"</td>";
+            num++;
+        }
+        t += "</tr>"
+    }        
+        // 문제해결을 위한 과정...
+        
+    t += "</table>";
+    document.write(t, "<br>"); // 화면에 출력(body)
+    console.log(t); // 콘솔 tab에 보여짐
+    </script>
+    
+</body>
+</html>

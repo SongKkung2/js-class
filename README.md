@@ -10,5 +10,6 @@
 - 반복문 : while, do while
 
 # mission
-- p.58 I , II : ~ing
+- p.58 I , II : finish
+- p.84 mission I, II 
 
