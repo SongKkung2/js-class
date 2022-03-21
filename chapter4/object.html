@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h1>객체(object) p.87</h1>
+    <p>객체를 구성하는 요소가 속성(propterty)과 기능 (method)이 있습니다.</p>
+    <h2>내장객체 , 배열</h2>
+    <p>변수는 한개의 데이터를 저장한는 공간, 배열은 이공간을 여러개로 나누어 여러개의 데이터를 저장한는 자료형</p>
+    <script>
+        // 자바스크립트
+        // 1) 코어(core)-내장객체
+        // >>>자바 스크립트 엔진에 내장되어있어서 필요할 경우 생성해서 사용할 수 있음.
+
+        // 2)bom - browser object model
+        // >>> 브라우저의 계층 구조로 내장되어있는 객체
+
+        // 3)dom - document object model
+        // >>>html 문서 구조를 말하고, 최상위 객체
+
+        // 배열객체
+        // >>> 데이터를 저장하는 공간(1개) vs 데이터를 한공간에 나눠서 저장.
+
+        // 변수로 데이터를 정의
+        // var user_no=1;
+        // var user_name="이박사";
+        // var user_age=35;
+        // var user_job="연구원";
+        // var user_add="서울";
+
+        // var user = new Array(); // 생성자를 이용해 배열 생성
+        // var user=[]; //리터럴 생성 흔하고, 간단!
+
+        var user=[
+            1,"이박사",35,"연구원","서울"
+        ];
+        user[1]= "햄박사"
+        // console.log(user);
+        // document.write(user[0] ,"<br>");
+        // document.write(user[1] ,"<br>");
+        // document.write(user[2] ,"<br>");
+        // document.write(user[3] ,"<br>");
+        // document.write(user[4] ,"<br>");
+        // var i =0;
+        // while(i<5){
+        //     document.write(user[i] ,"<br>");
+        //     i++;
+        // }
+        for(var i=1;i<user.length;++i){
+            document.write(user[i] ,"<br>");
+        };
+
+        document.write("=======================================" ,"<br>");
+        // p.100 코딩해보세요
+        for(i of user)(
+            document.write(i ,"<br>")
+            )
+            
+            </script>
+    <h3>배열객체 메소드와 프로퍼티</h3>
+    <script>
+        // p.102 배열객체 메소드
+        // .join(), .concat(), .slice(), .reverse()
+        var arr1 = ["사당","교대","방배","강남"];
+        var arr2 = ["신사","압구정","옥수"]
+        
+        document.write("=======================================" ,"<br>");
+        var result = arr1.join("-->")
+        document.write(result ,"<br>");
+
+        document.write("=======================================" ,"<br>");
+        document.write(arr1 ,"<br>");
+
+        document.write("=======================================" ,"<br>");
+        var result = arr2.join("-->")
+        document.write(result ,"<br>");
+        
+        document.write("=======================================" ,"<br>");
+        result = arr1.concat(arr2 + " <-- 종점입니다.")
+        document.write("arr1.concat(arr2) : "+result ,"<br>");
+        document.write("arr1. : "+arr1 ,"<br>");
+        document.write("arr2 : "+arr2 ,"<br>");
+        document.write("=======================================" ,"<br>");
+        result = arr1.slice(1,3);
+        document.write(arr1 ,"<br>");
+        document.write(result ,"<br>");
+        document.write("=======================================" ,"<br>");
+        // result = arr1.slice(10);
+        // if(!arr1[10]) alert("데이터가 없습니다!")
+        document.write("=======================================" ,"<br>");
+        document.write("원본 ar11 : " +arr1,"<br>");
+        arr1.sort()
+        document.write("sort 한 arr1 : "+arr1 ,"<br>");
+        document.write("그럼 arr1은? : "+arr1 ,"<br>");
+        document.write("=======================================" ,"<br>");
+        document.write("arr2원본  : "+arr2 ,"<br>");
+        arr2.reverse()
+        document.write(arr2 ,"<br>");
+        document.write("arr2 업데이트  : "+arr2 ,"<br>");
+        
+        
+        document.write("=======================================" ,"<br>");
+        var arr3=["교대","방배","강남"];
+        var arr4=["미금","정자","수서"];
+        
+        var value = arr3.splice(1,1,"동대문역","동대문 문화역사광장");
+        document.write(value ,"<br>");
+        document.write(arr3 ,"<br>");
+        // push() vs pop() : (끝에)추가 vs (끝에)제거
+        document.write("=======================================" ,"<br>");
+        document.write(arr4,"<br>");
+        arr4.push("수색")
+        document.write(arr4,"<br>");
+        
+        var arr5 = ["녹동","소태","농성"]
+        arr4.push(arr5)
+        document.write(arr4 ,"<br>");
+        document.write("=======================================" ,"<br>");
+        arr4.pop("arr5")
+        document.write(arr4 ,"<br>");
+        document.write("=======================================" ,"<br>");
+        // .unshift () vs .shift() :(앞에)추가 vs (앞에)제거
+        arr4.unshift("신사","압구정")
+        document.write(arr4 ,"<br>");
+        var arr4First = arr4.shift();
+        document.write("첫번째값 : " + arr4First ,"<br>");
+        document.write(arr4 ,"<br>");
+        
+        // length
+        console.log(arr4.length);
+        for(var j=0; j<arr4.length; j++){
+            document.write( arr4[j]+"역 열차가 도착합니다.", "<br>");
+        }
+        document.write("**=====================================" ,"<br>");
+        
+        for(i of arr4){
+            document.write(i+"역 열차가 곧 도착합니다." ,"<br>");
+        }
+        for(i in arr4){
+            document.write(i+"역 열차가 곧 도착합니다." ,"<br>");
+        }
+        </script>
+</body>
+</html>
