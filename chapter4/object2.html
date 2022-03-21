@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체, 객체</title>
+</head>
+<body>
+    <h1>객체</h1>
+    <p>객체는 속성과 메소드를 갖는 자료형</p>
+    <p>예를 들어서, tv라는 객체는 tv를 켜다 끄다의 메소드와 tv의 모델, 제조사, 가격등의 속성을 갖는다</p>
+    <p>원래 객체는 현실세계를 프로그래밍으로 설명할떄, 객체 지향형 프로그래밍으로 설명한다.</p>
+    <h2>객체의 선언과 값의 접근</h2>
+    <script>
+        // 여러가지 자료형 중 하나
+        // 1)string
+        // 2)number
+        // 3)boolean
+        // 4)array
+        // 5)object
+        // 6)등등등...
+
+        var arr1 =["사과","배","딸기"];
+        document.write("내가 좋아하는 과일은 "+arr1.pop()+"이다." ,"<br>");
+
+        // tv라는 객체를 선언해 보자.
+        // 객체 내부의 변수 = 멤버 변수
+        // 객체 내부의 funtion(=함수) : 메소드 
+        // funtion 은 p 131 참고
+
+        var tv={
+            model: "Hanul", //키
+            color: "dark blue",
+            price: 10000000,
+            info:function(){
+                document.write("모델명 : "+this.model+", 색상 : "+this.color+", 가격 : "+this.price,"<br>");
+            },
+            tvOff: function(){
+                document.write("전원이 3초뒤에 꺼집니다." ,"<br>");
+            },
+            tvOn:function(){
+                var choice = confirm("셋탑 박스를 켤까요?" ,"<br>");
+                if(choice){
+                    document.write("셋톱박스를 켰습니다." ,"<br>");;
+                }else{
+                    document.write("셋톱박스를 켜지 않습니다.~" ,"<br>");
+                }
+            }
+        };
+        tv.info();
+        document.write("우리집 tv의 모델은 "+tv.model+"이에요." ,"<br>");
+
+        // var tv=new Object();
+        
+    </script>
+</body>
+</html>
