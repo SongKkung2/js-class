@@ -8,6 +8,8 @@
 중첩if
 -선택문 : switch ~ case 
 - 반복문 : while, do while
+-객체 :
+object, property
 
 # mission
 - p.58 I , II : finish
