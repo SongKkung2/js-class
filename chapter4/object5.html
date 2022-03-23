@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체 &gt; 날짜객체</title>
+</head>
+<body>
+    <h1>특정 날짜를 date 객체를 이용해 설정, 관련 정보 추출</h1>
+    <p>2002년 월드컵 날짜와 관련된 정보를 출력하는 예제</p>
+    <script>
+        var today = new Date();
+        // console.log(today);
+        var nowMonth = today.getMonth()+1;
+        var nowDate = today.getDate(),
+        nowDay = today.getDay(); //숫자를 단어로 변경 해주어야함 switch 문 활용
+        // dayName;
+
+        // switch(nowDay){
+        //     case 0: dayName="일";
+        //     break;
+        //     case 1: dayName="월"
+        //     break;
+        //     case 2: dayName="화"
+        //     break;
+        //     case 3: dayName="수"
+        //     break;
+        //     case 4: dayName="목"
+        //     break;
+        //     case 5: dayName="금"
+        //     break;
+        //     case 6: dayName="토"
+        //     break;
+        //     default: alert("일시적인 네트워크 오류가 있습니다.");
+        // };
+
+        // 배열 객체를 이용해서 요일정보 3 -->수요일로 출력하시오.
+        var dayName=[
+            "일","월","화","수","목","금","토"
+        ]
+
+        document.write( `오늘은 ${nowMonth}월 ${nowDate}일 ${dayName[nowDay]}요일 이다.`);
+
+        var worldcup = new Date(2002,4,31);
+        var theMonth = worldcup.getMonth(),
+        theDate = worldcup.getDate(),
+        theDay = worldcup.getDay();
+        
+        document.write(`<br>그날은 ${theMonth}월, ${theDate}일, ${dayName[theDay]}요일 이였다.`);
+    </script>
+</body>
+</html>
