@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <h1>객체</h1>
+    <p>참조값 (reference) 값(valu)에 의한 차이</p>
+    <p>숫자, 분자, 불린형 등은 프리미티브 (원시형) 자료형은
+        객체와 다른점이 있는데 복사할때 차이를 살펴봅시다.
+    </p>
+    <script>
+        // call b valu 값에의한 복사
+        console.log("================================");
+        var user = "jack"
+        var he = user;
+        console.log("user : "+user);
+        console.log("he : "+he);
+        
+        console.log("================================");
+        user="peter";
+        console.log("user : "+user);
+        console.log("he : "+he);
+
+        console.log("================================");
+        var vip = {
+            name:'mr.hong',
+            born:"gwanju"
+
+        }
+        var guest = vip;
+        console.log("vip--->"+vip.name);
+        console.log("guest--->"+guest.name);
+        
+        console.log("================================");
+        vip.name = "mr.park"
+        console.log("vip--->"+vip.name);
+        console.log("guest--->"+guest.name);
+        
+        console.log("================================");
+        vip.age=60;
+        vip.name="mr.park"
+        vip["nick name"] = "balloon"
+        
+        console.log("vip.name--->"+vip.name);
+        console.log("vip.age--->"+vip.age);
+        console.log("guest.name--->"+guest.name);
+        console.log("guset.age--->"+guest.age);
+        console.log("guest nick name --->"+guest["nick name"]);
+        
+        console.log("================================");
+        for(var key in vip){
+            console.log(key +" : "+vip[key]);
+        }
+        console.log("================================");
+        for(var item in guest){
+            console.log(`${key} : ${guest[item]}`);//>템플릿 문법
+        }
+    </script>
+</body>
+</html>

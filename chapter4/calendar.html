@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시계</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            font : 16px/1.5 "Noto Sans KR" ,sans-serif;
+            background:url("https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_960_720.jpg") no-repeat center/cover;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            margin: 3rem 0 0 0;
+            font-size: 2.5rem;
+            font-weight: 100;
+            
+        }
+        .text_shadow{
+            text-shadow: 0 0 5px #000;
+        }
+        #calendar_text{
+            text-align: center;
+            color: #f1f1f1;
+            font-size: 3rem;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text_shadow">calendar</h1>
+    <div id="calendar_text" class="text_shadow">
+        바뀝니다.
+    </div>
+    <script>
+        // var nowDate = new Date();
+        // var nowMonth= String(nowDate.getMonth()+1);
+        // var nowYear= nowDate.getFullYear();
+        // var nowDay= nowDate.getDay();
+
+        // nowMonth = nowMonth.padStart(0,2)
+        
+
+        
+        // var dateOut = document.querySelector("#calendar_text");
+        // // console.dir(dateOut);
+        // setTimeout(writeDate, 3000);
+        // // dateOut.innerText= `${nowYear}.${nowMonth}.${nowDay},${nowDate}`
+        // function writeDate(){
+        //     dateOut.innerText= `${nowYear}.${nowMonth}.${nowDay},${nowDate}`;
+        // }
+
+        var myDate = new Date();
+
+        var myYear = myDate.getFullYear();
+        var myMonth = String(myDate.getMonth()+1);
+        myMonth = myMonth.padStart(2,"0");
+        var myday = myDate.getDate();
+
+        // console.log(`${myYear}.${myMonth}.${myday}`);
+        var $calendar = document.querySelector("#calendar_text");
+        // console.dir($calendar);
+        $calendar.innerHTML=`${myYear}. ${myMonth}. ${myday}`
+    </script>
+    
+</body>
+</html>

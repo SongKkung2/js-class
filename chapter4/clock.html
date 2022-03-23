@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <title>clock</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            background: url("https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753_960_720.jpg") no-repeat center/cover;
+            font: 16px/1.5 "Maven Pro","Noto Sans KR";
+
+        }
+        h1, h2, #time_text{
+            text-align: center;
+            color: white;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, .4);
+
+        }
+        h1{
+            margin: 5rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        h2{
+            margin: 1rem 0 2rem 0;
+            font-size: 2rem;
+        }
+        .time-wrap{
+            display: flex;
+            justify-content: center;
+        }
+        #time_text{
+            font-size: 3rem;
+            font-weight: bold;
+            padding: 1.7rem 2.250rem;
+            border: 2px solid snow;
+            
+        }
+        hr {
+            width: 60%;
+            margin: 2rem auto;
+            height: 1px;
+            background: white;
+            border: 0;
+        }
+        .alram-wrap {
+            width: 25%; 
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.712);
+            padding: 30px;
+            
+
+        }
+        .alram-wrap label {
+            display: none;
+        }
+        .input-wrap{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .alram-wrap input[type=text] { /* 속성 선택자 */
+            padding: 1rem 0;
+            text-indent: 1rem;
+            margin: 10px;
+            width: 100%;
+        }
+        .btn{
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: start;
+            
+            
+        }
+        #set_alram{
+            background: rgba(0, 0, 0, 0.377);
+            
+            font-size: 1.5rem;
+            padding: 0px;
+            width: 100px;
+            height: 120px;
+            border: 1px solid black;
+            margin-top: 10px;
+            color: white;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>시간, 날짜 정보 출력</h1>
+    <h2>시계만들기</h2>
+    <div class="time-wrap">
+        <div id="time_text">시:분:초</div>
+    </div>
+    <hr>
+    <form action="" id="alarm_form">
+        <div class="alram-wrap">
+            
+                <div class="input-wrap">
+                    <label for="alarm_hour">시</label>
+                    <input type="text" id="alarm_hour"maxlength="2" placeholder="알람 설정 시간을 입력하세요">
+                    <label for="alarm_min">분</label>
+                    <input type="text" id="alarm_min"maxlength="2" placeholder="알람 설정 시간을 입력하세요">
+                </div>
+                
+                <div class="btn">
+                    <input type="submit" id="set_alram" value="설정"></div>
+        </div>
+    </form>
+    <script>
+        var myDate = new Date();
+        var myHours = myDate.getHours();
+        var myMins = myDate.getMinutes();
+        var mySecd = myDate.getSeconds();
+        // 출력대상 탐색
+        var targetTag = document.querySelector("#time_text")
+        targetTag.innerHTML=`<strong>${myHours} : ${myMins} : ${mySecd}</strong>`
+        
+        if(13 == myHours){
+            if(0 == myMins){
+                alert("점심시간입니다.")
+            }
+        }
+    </script>
+    
+</body>
+</html>
