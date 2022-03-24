@@ -13,8 +13,8 @@ a,a:link{
     text-decoration: none;
 }
 
-.d-none {
-    display: none;
+.d-none { 
+    display: none !important;
 }
 /* header */
 .header-top{
@@ -28,6 +28,9 @@ a,a:link{
     display: flex;
     justify-content: space-between;
 }
+.top-wrap h1{
+    text-transform: capitalize;
+}
 .top-links{
     display: flex;
     column-gap: 30px;
@@ -36,8 +39,7 @@ a,a:link{
     font-size: 14px;
     text-transform: uppercase;
 }
-
-.article-wrap {
+.article-wrap, #result_pop {
     width: 400px;
     height: 500px;
     position: absolute;
@@ -47,7 +49,33 @@ a,a:link{
     z-index: 100;
     /* background: gold; */
 }
-
+#result_pop{
+    z-index: 1000;
+    background: white;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .pop-wrap{
+     background: red;
+} */
+#result_pop h1 {
+    font-size: 20px;
+    margin-bottom : 1rem;
+    text-align: left;
+}
+#result_pop p {
+    margin: 1rem 0;
+}
+.d_day{
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+.d_day strong {
+    color: rgb(68, 146, 91);
+}
 article{
     text-align: right;
 }
@@ -102,8 +130,8 @@ article p {
 #dday_calc{
     border: none;
     background-color: white;
-    color: balck;
-    width: 100px;
+    color: black;
+    flex: 100px;
     padding: 1rem 0;
     border-radius: 10px;
    
@@ -112,7 +140,7 @@ article p {
     border: none;
     background-color: black;
     color: white;
-    width: 100px;
+    flex: 100px;
     padding: 1rem 0;
     border-radius: 10px;
     
@@ -120,4 +148,47 @@ article p {
 .form-list li:nth-child(4){
     justify-content: center;
     column-gap: 20px;
+}
+
+/* ==================기존 스타일 마지막에 미디어 쿼리!================= */
+@media screen and (max-width: 480px) {
+    .top-wrap {
+        max-width: 100%; /* was 1190px */
+        padding: 0 1rem;
+        align-items: center;
+        
+    }
+    .top-wrap h1{
+        font-size: 3.75rem;
+    }
+    #burger {
+        display: inline-block !important;
+    }
+    .top-links {
+        display: none;
+        
+    }
+}
+@media screen and (max-width: 425px){
+    .article-wrap {
+        max-width: 70%;
+        left: 50%;
+        top: 60%;
+    }
+}
+@media screen and (max-width: 375px){
+    .article-wrap {
+        max-width: 80%;
+        left: 50%;
+        top: 60%;
+    }
+}
+@media screen and (max-width: 320px){
+    .article-wrap{
+
+        max-width: 93.75%;
+        left: 45%;
+        top: 60%;
+        
+    }
 }

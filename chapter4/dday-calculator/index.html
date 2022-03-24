@@ -17,22 +17,32 @@
     <title>디데이 계산기</title>
 </head>
 <body>
+    <div id="result_pop" class="d-none">
+        <div class="pop-wrap">
+            <h1>예정일까지</h1>
+            <p class="d_day"></p>
+            <p>남았습니다.</p>
+        </div>
+    </div>
     <header>
         <div class="header-top">
             <div class="top-wrap">
-                <h1>디데이 계산기</h1>
+                <h1>d-day</h1>
                 <ul class="top-links">
                     <li><a href="#"><i class="fa-solid fa-house"></i> home</a></li>
                     <li><a href="#"><i class="fa-solid fa-user"></i> join</a></li>
                     <li><a href="#"><i class="fa-solid fa-list-ul"></i> sitemap</a></li>
                 </ul>
+                <div id="burger" class="d-none">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
     <section id="main">
         <div class="article-wrap">
             <article >
-                <h3>여러분의 소중한  약속을,<br>잊지마세요</h3>
+                <h3>여러분의 소중한 약속을,<br>잊지마세요</h3>
                 <p>그날까지 며칠이 남았는지 계산해보세요!</h3></p>
                 <button id="calc"">계산해보기 <i class="fa-solid fa-arrow-right"></i></button>
             </article>
