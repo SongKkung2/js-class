@@ -8,10 +8,16 @@
 중첩if
 -선택문 : switch ~ case 
 - 반복문 : while, do while
--객체 :
+-객체 > 내장객체 >배열객체 
 object, property
 
+-함수 : 함수선언, 매개변수, 생성자 함수 등등
+
 # mission
+- p.58 I , II : finish
+- p.84 mission I, II 
+- p.58 I , II : finish
+- p.84 mission I, II 
 - p.58 I , II : finish
 - p.84 mission I, II 
 
