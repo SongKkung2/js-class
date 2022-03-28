@@ -49,20 +49,57 @@
     <script>
         // console.log("원주율"+Math.PI);
 
-        var num = 1.1234
-        console.log(typeof num);
+        // var num = 1.1234
+        // console.log(typeof num);
 
-        var maxNum = Math.max(10,5,8,30);
-        console.log("최댓값 : "+ maxNum);
+        // var maxNum = Math.max(10,5,8,30);
+        // console.log("최댓값 : "+ maxNum);
 
-        var minNum = Math.min(10,5,8,30);
-        console.log("최소값 : "+ minNum);
+        // var minNum = Math.min(10,5,8,30);
+        // console.log("최소값 : "+ minNum);
 
-        var powNum = Math.pow(15,2)
-        console.log("pow : "+powNum);
+        // var powNum = Math.pow(15,2)
+        // console.log("pow : "+powNum);
 
-        var ranNum = Math.floor(Math.random()*45);
-        console.log("랜덤 : "+parseInt(ranNum));
+        // var ranNum1 = Math.floor(Math.random()*31);
+        // var ranNum2 = Math.floor(Math.random()*31)+120;
+        // console.log("랜덤 : "+parseInt(ranNum1));
+        // console.log("랜덤 : "+parseInt(ranNum2));
+
+        // 코딩해보세요!
+        // 웹사이트 방문시 창에 방문자가 가위 바위 보 중 하나를
+        // 입력하면 컴퓨터가 랜덤으로 내려는 가위 바위 보와 일치했을때
+        // 맞추는게임 (무엇을 낼지 예측하는게임)
+
+        document.write("<h1>컴퓨터가 내는 가위, 바위, 보 맞추기!</h1>" ,"<br>");
+
+        var game = prompt("가위 바위 보 중 하나를 입력하세요!")
+        var gameNum;
+        switch (game){
+            case "가위":
+                gameNum=1;
+                break;
+            case "바위":
+                gameNum=2;
+                break;
+            case "보":
+                gameNum=3;
+                break;
+            default: alert("가위 바위 보 중 하나만 입력해 주세요.");
+             location.reload();
+        }
+        var com = Math.ceil(Math.random()*3);
+        console.log("컴퓨터의 난수 값 : "+com);
+
+        document.write(`<img src = "images/math_img_${gameNum}.png" alt="">`);
+
+        document.write(`<img src = "images/math_img_${com}.png" alt="">`);
+
+        if(gameNum == com){
+            document.write(`<img src = "images/game_1.jpg" alt="이겼을때">`);
+        }else{
+            document.write(`<img src = "images/game_2.jpg" alt="졌을때">`);
+        }
     </script>
 </body>
 </html>
