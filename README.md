@@ -13,6 +13,9 @@ object, property
 
 -함수 : 함수선언, 매개변수, 생성자 함수 등등
 
+> II.  Jquery part
+-제이쿼리 문서객체 선택자와 조작법
+
 # mission
 - p.58 I , II : finish
 - p.84 mission I, II 
