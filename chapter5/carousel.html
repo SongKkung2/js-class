@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐러셀</title>
+    <style>
+        button{
+            border: 0;
+        }
+        .gallery-body{
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        #prev, #next{
+            position: absolute;
+            z-index: 1000;
+            top: 50%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: rgba(0,0,0,.5);
+            color: white;
+            transform: translateY(-50%);
+            font-size: 0%;
+
+        }
+        #prev{
+            left: -50px;
+        }
+        #prev::before{
+            content: '<';
+            font-size: 16px;
+        }
+        #next{
+            right: -50px;
+        }
+        #next::before{
+            content: '>';
+            font-size: 16px;
+        }
+        #gallery{
+            position: relative;
+        }
+        #count{
+            position: absolute;
+            color: blue;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="site-name">사이트명</div>
+        <nav>
+            <ul id="gnb">
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>p.141~142함수 정의문을 이용한 캐러셀
+
+    </h1>
+    <h2>또는 이미지 갤러리, 슬라이드 만들기</h2>
+    <div class="gallery-body">
+        <div id="gallery">
+            <img src="" alt="placeholder">
+            <div id="count">1 / 8</div>
+        </div>
+            
+        <button id="prev">이전</button>
+        <button id="next">다음</button>
+    </div>
+    <script>
+        // 사진 8개 가짜 사진으로 대신
+        // 이전 버튼 : 이전사진으로
+        // 다음 버튼 : 다음 사진으로 변경
+        // 버튼을 누르면 실행할 코드 덩어리 : 함수
+        // 사진으로 이전 다음으로 바꾸는 코드 덩어리 : 함수
+
+
+        // 전역변수
+        var num = 0;
+        var gallery = document.querySelector("#gallery");
+        var imgTag = document.querySelector("img");
+        // var imgURL = [
+        //     "https://picsum.photos/id/1/600/300",
+        //     "https://picsum.photos/id/2/600/300",
+        //     "https://picsum.photos/id/3/600/300",
+        //     "https://picsum.photos/id/4/600/300",
+        //     "https://picsum.photos/id/5/600/300",
+        //     "https://picsum.photos/id/6/600/300",
+        //     "https://picsum.photos/id/7/600/300",
+        //     "https://picsum.photos/id/8/600/300",
+        // ]
+        var prevBTN = document.querySelector("#prev")
+        var nextBTN = document.querySelector("#next")
+        
+        var imgCount = document.querySelector("#count")
+
+        prevBTN.addEventListener("click",prevImg)
+        nextBTN.addEventListener("click",nextImg)
+
+        function imgInit(){
+            setImg(0);
+        }
+        imgInit();
+
+        function prevImg(){
+            if(num == 0) num =7;;
+            num--;
+            setImg(num);
+            setCount(num);
+        }
+        function nextImg(){
+            if(num == 7) num = 0;
+            num++
+            setImg(num);
+            setCount(num);
+        }
+        function setImg(index){
+            // imgTag.setAttribute("src", imgURL[index]) 
+            imgTag.setAttribute("src", "https://picsum.photos/id/"+index+"/1000/300") 
+        }
+        // 아래나 위의 함수안에서 선언한 변수는 지역변수
+        function setCount (num){
+            imgCount.innerText = `${num+1} / 8`;
+        }
+        
+        // function gallery(direct){
+        //     if(direct){
+        //         if(num == 8) return;
+        //         num++;
+        //     }else {
+        //         if (num ==1) return;
+        //     }
+        //     imgTag.setAttribute("src","images/img"+num+".jpg");
+        // }
+</script>
+</body>
+</html>
