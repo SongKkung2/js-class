@@ -14,7 +14,8 @@
             height: 100%;
         }
         body{
-            background: url("https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753_960_720.jpg") no-repeat center/cover;
+            font: 16px/1.5 "Maven Pro", "Noto Sans KR";
+            background: url("https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753_960_720.jpg") no-repeat center / cover;
             font: 16px/1.5 "Maven Pro","Noto Sans KR";
 
         }
@@ -51,7 +52,7 @@
             border: 0;
         }
         .alram-wrap {
-            width: 25%; 
+            width: 40%; 
             margin: 0 auto;
             display: flex;
             flex-direction: row;
@@ -88,7 +89,7 @@
             
             font-size: 1.5rem;
             padding: 0px;
-            width: 100px;
+            width: 80px;
             height: 120px;
             border: 1px solid black;
             margin-top: 10px;
@@ -107,32 +108,82 @@
     </div>
     <hr>
     <form action="" id="alarm_form">
+        
         <div class="alram-wrap">
             
                 <div class="input-wrap">
                     <label for="alarm_hour">시</label>
-                    <input type="text" id="alarm_hour"maxlength="2" placeholder="알람 설정 시간을 입력하세요">
+                    <input type="text" id="alarm_hour" required maxlength="2" placeholder="알람 설정 시간을 입력하세요">
                     <label for="alarm_min">분</label>
-                    <input type="text" id="alarm_min"maxlength="2" placeholder="알람 설정 시간을 입력하세요">
+                    <input type="text" id="alarm_min" required maxlength="2" placeholder="알람 설정 시간을 입력하세요">
+                    <label for="alarm_message">메세지</label>
+                    <input type="text" id="alarm_message" placeholder="알람 내용을 간단히 작성하세요 ex>점심약속출발">
                 </div>
                 
                 <div class="btn">
                     <input type="submit" id="set_alram" value="설정"></div>
         </div>
+        <button id="closePop">창닫기</button>
+        
     </form>
     <script>
-        var myDate = new Date();
-        var myHours = myDate.getHours();
-        var myMins = myDate.getMinutes();
-        var mySecd = myDate.getSeconds();
-        // 출력대상 탐색
-        var targetTag = document.querySelector("#time_text")
-        targetTag.innerHTML=`<strong>${myHours} : ${myMins} : ${mySecd}</strong>`
         
-        if(13 == myHours){
-            if(0 == myMins){
-                alert("점심시간입니다.")
+        // 출력대상 탐색
+        const targetTag = document.querySelector("#time_text")
+        // targetTag.innerHTML=`<strong>${myHours} : ${myMins} : ${mySecd}</strong>`
+        
+        const inervalID = setInterval(function(){
+            let myDate = new Date();
+            let myHours = myDate.getHours();
+            let myMins =String( myDate.getMinutes()).padStart(2,"0");
+            let mySecd = String(myDate.getSeconds()).padStart(2,"0");
+            targetTag.innerHTML=`<strong>${myHours} : ${myMins} : ${mySecd}</strong>`
+            return myHours, myMins, mySecd
+        },1000)
+
+        const alarmForm = document.querySelector("#alarm_form")
+        const submitBTN = alarmForm.querySelector("#set_alram")
+
+        let alarmHour = document.querySelector("#alarm_hou")
+        let alarmMin = document.querySelector("#alarm_min")
+        let alarmText = document.querySelector("#alarm_message")
+        
+        alarmForm.addEventListener("submit",function(e){
+            e.preventDefault();
+            saveAlarm();
+            alarmCheck();
+            clearAlarm();
+        });
+        function alarmCheck(){
+            let schedulesList = []
+            if(localStorage.length){
+                console.log("등록된 알람이 있습니다.");
+            } else {
+                console.log("등록된 알람이 없습니다.");
+
             }
+        }
+        function saveAlarm(){
+            let schedules = {
+                hours : alarmHour.value, 
+                mins : alarmMin.value, 
+                message : alarmText.value}
+                localStorage.setItem("schedule", JSON.stringify(schedules));
+        
+            function clearAlarm(){
+                larmHour.value=alarmMin.value=alarmText.value="";
+            }
+        };
+        // function timer(){
+        //     targetTag.innerHTML=`<strong>${myHours} : ${myMins} : ${mySecd}</strong>`
+        // }
+        // if(13 == myHours){
+        //     if(0 == myMins){
+        //         alert("점심시간입니다.")
+        //     }
+        // }
+        closePop.onclick=function(){
+            window.close();
         }
     </script>
     
